@@ -26,6 +26,15 @@ class ViewController: NSViewController {
         }
     }
 
+    @IBAction func presentSheet(sender: NSButton) {
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
+        let sheet = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("sheet")) as! ViewController
+        self.presentAsSheet(sheet)
+    }
+
+    @IBAction func closeSheet(sender: NSButton) {
+        dismiss(self)
+    }
 
 }
 

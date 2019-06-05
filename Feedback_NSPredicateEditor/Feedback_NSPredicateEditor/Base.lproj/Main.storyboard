@@ -814,6 +814,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="presentSheetWithSender:" target="XfG-lQ-9wD" id="4DH-YI-x2t"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -832,6 +835,138 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ZwS-M8-YVm">
+            <objects>
+                <viewController storyboardIdentifier="sheet" id="wa2-St-UGD" customClass="ViewController" customModule="Feedback_NSPredicateEditor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="g0W-4A-tmR">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uN-kc-Yjf">
+                                <rect key="frame" x="20" y="51" width="410" height="199"/>
+                                <clipView key="contentView" id="t4K-OZ-t6a">
+                                    <rect key="frame" x="1" y="1" width="408" height="197"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <predicateEditor verticalHuggingPriority="750" nestingMode="compound" canRemoveAllRows="YES" rowHeight="32" id="BLt-bb-LYe">
+                                            <rect key="frame" x="0.0" y="0.0" width="408" height="80"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <rowTemplates>
+                                                <predicateEditorRowTemplate rowType="compound" id="TGo-Sf-gxS">
+                                                    <popUpMenus>
+                                                        <menu id="3Rr-O5-rTk">
+                                                            <items>
+                                                                <menuItem title="Any" state="on" id="4NQ-JR-g9x">
+                                                                    <integer key="representedObject" value="2"/>
+                                                                </menuItem>
+                                                                <menuItem title="All" id="T5a-xi-HNC">
+                                                                    <integer key="representedObject" value="1"/>
+                                                                </menuItem>
+                                                            </items>
+                                                        </menu>
+                                                        <menu id="M5f-Ed-c9a">
+                                                            <items>
+                                                                <menuItem title="of the following are true" state="on" id="G9K-8W-Koq"/>
+                                                            </items>
+                                                        </menu>
+                                                    </popUpMenus>
+                                                </predicateEditorRowTemplate>
+                                                <predicateEditorRowTemplate rowType="simple" id="2Ze-8j-Nyg">
+                                                    <array key="leftExpressionObject">
+                                                        <expression type="keyPath">
+                                                            <string key="keyPath">name</string>
+                                                        </expression>
+                                                        <expression type="keyPath">
+                                                            <string key="keyPath">address</string>
+                                                        </expression>
+                                                        <expression type="keyPath">
+                                                            <string key="keyPath">sign</string>
+                                                        </expression>
+                                                    </array>
+                                                    <integer key="rightExpressionObject" value="700"/>
+                                                    <popUpMenus>
+                                                        <menu id="BEf-IZ-aKc">
+                                                            <items>
+                                                                <menuItem title="name" state="on" id="WZE-5N-tRy">
+                                                                    <expression key="representedObject" type="keyPath">
+                                                                        <string key="keyPath">name</string>
+                                                                    </expression>
+                                                                </menuItem>
+                                                                <menuItem title="address" id="g1d-vc-Urf">
+                                                                    <expression key="representedObject" type="keyPath">
+                                                                        <string key="keyPath">address</string>
+                                                                    </expression>
+                                                                </menuItem>
+                                                                <menuItem title="sign" id="CPo-du-YKj">
+                                                                    <expression key="representedObject" type="keyPath">
+                                                                        <string key="keyPath">sign</string>
+                                                                    </expression>
+                                                                </menuItem>
+                                                            </items>
+                                                        </menu>
+                                                        <menu id="Sef-ZM-L40">
+                                                            <items>
+                                                                <menuItem title="contains" state="on" id="4rV-e7-Lwg">
+                                                                    <integer key="representedObject" value="99"/>
+                                                                </menuItem>
+                                                                <menuItem title="begins with" id="lIo-V4-RDn">
+                                                                    <integer key="representedObject" value="8"/>
+                                                                </menuItem>
+                                                                <menuItem title="ends with" id="rBG-Pe-0ua">
+                                                                    <integer key="representedObject" value="9"/>
+                                                                </menuItem>
+                                                                <menuItem title="is" id="1I0-lC-VTc">
+                                                                    <integer key="representedObject" value="4"/>
+                                                                </menuItem>
+                                                                <menuItem title="is not" id="D6p-W1-YcV">
+                                                                    <integer key="representedObject" value="5"/>
+                                                                </menuItem>
+                                                            </items>
+                                                        </menu>
+                                                    </popUpMenus>
+                                                </predicateEditorRowTemplate>
+                                            </rowTemplates>
+                                        </predicateEditor>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="7cV-fD-NZl">
+                                    <rect key="frame" x="-100" y="-100" width="360" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="dVl-oU-bml">
+                                    <rect key="frame" x="336" y="1" width="15" height="84"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Uqr-9q-JN6">
+                                <rect key="frame" x="358" y="13" width="75" height="32"/>
+                                <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BrB-HX-t9H">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="closeSheetWithSender:" target="wa2-St-UGD" id="3nQ-bk-g6o"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Uqr-9q-JN6" secondAttribute="trailing" constant="23" id="1dX-kV-lND"/>
+                            <constraint firstItem="Uqr-9q-JN6" firstAttribute="top" secondItem="3uN-kc-Yjf" secondAttribute="bottom" constant="10" id="EEt-Mj-OTn"/>
+                            <constraint firstItem="3uN-kc-Yjf" firstAttribute="leading" secondItem="g0W-4A-tmR" secondAttribute="leading" constant="20" id="N89-gc-hsg"/>
+                            <constraint firstAttribute="bottom" secondItem="Uqr-9q-JN6" secondAttribute="bottom" constant="20" id="Vi4-j7-TEd"/>
+                            <constraint firstAttribute="trailing" secondItem="3uN-kc-Yjf" secondAttribute="trailing" constant="20" id="jae-1Y-oBW"/>
+                            <constraint firstItem="3uN-kc-Yjf" firstAttribute="top" secondItem="g0W-4A-tmR" secondAttribute="top" constant="20" id="x5K-UC-Uh9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="predicateEditor" destination="BLt-bb-LYe" id="m6c-51-eIE"/>
+                    </connections>
+                </viewController>
+                <customObject id="1Fe-U0-Rjn" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="602" y="655"/>
         </scene>
     </scenes>
 </document>
