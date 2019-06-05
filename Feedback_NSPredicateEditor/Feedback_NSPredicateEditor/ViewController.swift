@@ -9,11 +9,15 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    
+    @IBOutlet weak var predicateEditor: NSPredicateEditor!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        predicateEditor.addRow(self)
     }
 
     override var representedObject: Any? {
