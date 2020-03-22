@@ -8,7 +8,13 @@
 
 import Cocoa
 
+class FlippedVEV: NSVisualEffectView {
+    override var isFlipped: Bool { return true }
+}
+
 class ViewController: NSViewController {
+    
+    var shouldFixPredicateEditor = false
     
     @IBOutlet weak var predicateEditor: NSPredicateEditor!
 
@@ -17,15 +23,30 @@ class ViewController: NSViewController {
         
         predicateEditor.rowTemplates = NSPredicateEditorRowTemplate.feedbackTemplates()
         predicateEditor.addRow(self)
+        
+        if shouldFixPredicateEditor {
+            if let clipView = predicateEditor.superview as? NSClipView, let scrollView = clipView.superview as? NSScrollView {
+                let flippedVEV = FlippedVEV(frame: predicateEditor.frame)
+                flippedVEV.material = .sheet
+
+                predicateEditor.removeFromSuperview()
+                flippedVEV.addSubview(predicateEditor)
+                clipView.addSubview(flippedVEV)
+                scrollView.documentView = flippedVEV
+            }
+        }
+        
     }
     
     @IBAction func presentStandardSheet(sender: NSButton) {
         let vc = ViewController.fromStoryboard()
+        vc.shouldFixPredicateEditor = false
         self.presentAsSheet(vc)
     }
     
     @IBAction func presentFixedSheet(sender: NSButton) {
         let vc = ViewController.fromStoryboard()
+        vc.shouldFixPredicateEditor = true
         self.presentAsSheet(vc)
     }
     
