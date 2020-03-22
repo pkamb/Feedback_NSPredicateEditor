@@ -11,6 +11,7 @@
 		5810671622A83434007FE01A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5810671522A83434007FE01A /* ViewController.swift */; };
 		5810671822A83436007FE01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5810671722A83436007FE01A /* Assets.xcassets */; };
 		5810671B22A83436007FE01A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5810671922A83436007FE01A /* Main.storyboard */; };
+		5822C515242765A70068B4F7 /* PredicateEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5822C514242765A70068B4F7 /* PredicateEditor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		5810671A22A83436007FE01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5810671C22A83436007FE01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5810671D22A83436007FE01A /* Feedback_NSPredicateEditor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Feedback_NSPredicateEditor.entitlements; sourceTree = "<group>"; };
+		5822C514242765A70068B4F7 /* PredicateEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredicateEditor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				5810671322A83434007FE01A /* AppDelegate.swift */,
 				5810671522A83434007FE01A /* ViewController.swift */,
+				5822C514242765A70068B4F7 /* PredicateEditor.swift */,
 				5810671722A83436007FE01A /* Assets.xcassets */,
 				5810671922A83436007FE01A /* Main.storyboard */,
 				5810671C22A83436007FE01A /* Info.plist */,
@@ -134,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5810671622A83434007FE01A /* ViewController.swift in Sources */,
+				5822C515242765A70068B4F7 /* PredicateEditor.swift in Sources */,
 				5810671422A83434007FE01A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
