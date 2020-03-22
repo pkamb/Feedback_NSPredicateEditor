@@ -16,18 +16,27 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         
         predicateEditor.rowTemplates = NSPredicateEditorRowTemplate.feedbackTemplates()
-        
         predicateEditor.addRow(self)
     }
-
-    @IBAction func presentSheet(sender: NSButton) {
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
-        let sheet = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("sheet")) as! ViewController
-        self.presentAsSheet(sheet)
+    
+    @IBAction func presentStandardSheet(sender: NSButton) {
+        let vc = ViewController.fromStoryboard()
+        self.presentAsSheet(vc)
     }
-
+    
+    @IBAction func presentFixedSheet(sender: NSButton) {
+        let vc = ViewController.fromStoryboard()
+        self.presentAsSheet(vc)
+    }
+    
     @IBAction func closeSheet(sender: NSButton) {
         dismiss(self)
     }
-
+    
+    static func fromStoryboard() -> ViewController {
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: Bundle.main)
+        let sheet = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("sheet")) as! ViewController
+        return sheet
+    }
+    
 }

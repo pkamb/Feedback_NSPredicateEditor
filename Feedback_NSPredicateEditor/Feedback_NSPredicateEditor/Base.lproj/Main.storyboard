@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -716,7 +717,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <predicateEditor verticalHuggingPriority="750" nestingMode="compound" canRemoveAllRows="YES" rowHeight="32" id="1Cn-qr-AkS">
-                                            <rect key="frame" x="0.0" y="0.0" width="438" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="438" height="197"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <rowTemplates>
                                                 <predicateEditorRowTemplate rowType="compound" id="lco-of-Qcf">
@@ -806,22 +807,38 @@
                                 </scroller>
                             </scrollView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tsv-XA-qNk">
-                                <rect key="frame" x="385" y="13" width="81" height="32"/>
+                                <rect key="frame" x="334" y="13" width="132" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="69" id="ccg-Z9-4Aw"/>
+                                    <constraint firstAttribute="width" constant="120" id="ccg-Z9-4Aw"/>
                                 </constraints>
-                                <buttonCell key="cell" type="push" title="Sheet" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dWe-vQ-BWr">
+                                <buttonCell key="cell" type="push" title="Sheet with fix" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dWe-vQ-BWr">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="presentSheetWithSender:" target="XfG-lQ-9wD" id="4DH-YI-x2t"/>
+                                    <action selector="presentFixedSheetWithSender:" target="rPt-NT-nkU" id="9Vd-j9-2eL"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Z14-Sa-o5y">
+                                <rect key="frame" x="15" y="13" width="132" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="ffu-dU-F5z"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Standard Sheet" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="88C-Jl-Ei3">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="presentStandardSheetWithSender:" target="rPt-NT-nkU" id="ImS-lh-OWc"/>
                                 </connections>
                             </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="yPB-yS-zVL" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="52M-gm-mHN"/>
+                            <constraint firstItem="Z14-Sa-o5y" firstAttribute="top" secondItem="1Cn-qr-AkS" secondAttribute="bottom" constant="11" id="EMp-RR-1oR"/>
                             <constraint firstItem="tsv-XA-qNk" firstAttribute="top" secondItem="yPB-yS-zVL" secondAttribute="bottom" constant="10" id="Gfx-Qh-Z9s"/>
+                            <constraint firstAttribute="bottom" secondItem="Z14-Sa-o5y" secondAttribute="bottom" constant="20" id="TUP-b7-xoT"/>
+                            <constraint firstItem="Z14-Sa-o5y" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="21" id="XS5-Bl-xzz"/>
                             <constraint firstAttribute="trailing" secondItem="yPB-yS-zVL" secondAttribute="trailing" constant="20" id="cDF-Mn-UUN"/>
                             <constraint firstAttribute="bottom" secondItem="tsv-XA-qNk" secondAttribute="bottom" constant="20" id="fr1-Z0-DRh"/>
                             <constraint firstItem="yPB-yS-zVL" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="lkS-3J-Zz7"/>
@@ -851,7 +868,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <predicateEditor verticalHuggingPriority="750" nestingMode="compound" canRemoveAllRows="YES" rowHeight="32" id="BLt-bb-LYe">
-                                            <rect key="frame" x="0.0" y="0.0" width="408" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="408" height="197"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <rowTemplates>
                                                 <predicateEditorRowTemplate rowType="compound" id="TGo-Sf-gxS">
