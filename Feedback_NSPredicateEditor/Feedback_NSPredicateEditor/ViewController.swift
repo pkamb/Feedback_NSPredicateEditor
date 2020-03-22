@@ -33,6 +33,20 @@ class ViewController: NSViewController {
                 flippedVEV.addSubview(predicateEditor)
                 clipView.addSubview(flippedVEV)
                 scrollView.documentView = flippedVEV
+                
+                flippedVEV.translatesAutoresizingMaskIntoConstraints = false
+                flippedVEV.addConstraints([
+                    NSLayoutConstraint(item: flippedVEV, attribute: .leading,  relatedBy: .equal, toItem: predicateEditor, attribute: .leading,  multiplier: 1, constant: 0),
+                    NSLayoutConstraint(item: flippedVEV, attribute: .trailing, relatedBy: .equal, toItem: predicateEditor, attribute: .trailing, multiplier: 1, constant: 0),
+                    NSLayoutConstraint(item: flippedVEV, attribute: .top,      relatedBy: .equal, toItem: predicateEditor, attribute: .top,      multiplier: 1, constant: 0),
+                    NSLayoutConstraint(item: flippedVEV, attribute: .height,   relatedBy: .equal, toItem: predicateEditor, attribute: .height,   multiplier: 1, constant: 0),
+                ])
+                
+                clipView.addConstraints([
+                    NSLayoutConstraint(item: clipView, attribute: .leading,  relatedBy: .equal, toItem: flippedVEV, attribute: .leading,  multiplier: 1, constant: 0),
+                    NSLayoutConstraint(item: clipView, attribute: .trailing, relatedBy: .equal, toItem: flippedVEV, attribute: .trailing, multiplier: 1, constant: 0),
+                    NSLayoutConstraint(item: clipView, attribute: .top,      relatedBy: .equal, toItem: flippedVEV, attribute: .top,      multiplier: 1, constant: 0),
+                ])
             }
         }
         
