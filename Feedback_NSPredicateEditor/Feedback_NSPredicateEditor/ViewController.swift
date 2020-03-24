@@ -39,7 +39,7 @@ class ViewController: NSViewController {
                     flippedVEV.leadingAnchor .constraint(equalTo:predicateEditor.leadingAnchor ),
                     flippedVEV.trailingAnchor.constraint(equalTo:predicateEditor.trailingAnchor),
                     flippedVEV.topAnchor     .constraint(equalTo:predicateEditor.topAnchor     ),
-                    flippedVEV.heightAnchor  .constraint(equalTo:predicateEditor.heightAnchor  ),
+                    flippedVEV.bottomAnchor  .constraint(equalTo:predicateEditor.bottomAnchor  ),
                     clipView.leadingAnchor   .constraint(equalTo:flippedVEV     .leadingAnchor ),
                     clipView.trailingAnchor  .constraint(equalTo:flippedVEV     .trailingAnchor),
                     clipView.topAnchor       .constraint(equalTo:flippedVEV     .topAnchor     ),
